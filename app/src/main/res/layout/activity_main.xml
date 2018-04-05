@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="view"
+            type="com.example.mac.calculatormvvm.MainActivity" />
+
+        <variable
+            name="viewmodel"
+            type="com.example.mac.calculatormvvm.MainActivityVM" />
+
+    </data>
+
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--NUMBER TO DISPLAY-->
+    <LinearLayout
+        android:orientation="vertical"
+        android:paddingTop="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:gravity="right"
+            android:text="@{viewmodel.text}"
+            android:textSize="80sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:gravity="right"
+            android:text="@{viewmodel.value}"
+            android:textSize="30sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="@color/black"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--NUMBER-->
+        <GridLayout
+            android:rowCount="3"
+            android:columnCount="3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:onClick="@{() -> viewmodel.type7()}"
+                android:paddingTop="24dp"
+                android:paddingBottom="24dp"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                android:textSize="36sp"
+                android:textColor="@color/white"
+                android:text="7"/>
+
+            <TextView
+                android:onClick="@{() -> viewmodel.type8()}"
+                android:paddingTop="24dp"
+                android:paddingBottom="24dp"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                android:textSize="36sp"
+                android:textColor="@color/white"
+                android:text="8"/>
+
+            <TextView
+                android:onClick="@{() -> viewmodel.type9()}"
+                android:paddingTop="24dp"
+                android:paddingBottom="24dp"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                android:textSize="36sp"
+                android:textColor="@color/white"
+                android:text="9"/>
+
+            <TextView
+                android:onClick="@{() -> viewmodel.type4()}"
+                android:paddingTop="24dp"
+                android:paddingBottom="24dp"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                android:textSize="36sp"
+                android:textColor="@color/white"
+                android:text="4"/>
+
+            <TextView
+                android:onClick="@{() -> viewmodel.type5()}"
+                android:paddingTop="24dp"
+                android:paddingBottom="24dp"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                android:textSize="36sp"
+                android:textColor="@color/white"
+                android:text="5"/>
+
+            <TextView
+                android:onClick="@{() -> viewmodel.type6()}"
+                android:paddingTop="24dp"
+                android:paddingBottom="24dp"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                android:textSize="36sp"
+                android:textColor="@color/white"
+                android:text="6"/>
+
+            <TextView
+                android:onClick="@{() -> viewmodel.type1()}"
+                android:paddingTop="24dp"
+                android:paddingBottom="24dp"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                android:textSize="36sp"
+                android:textColor="@color/white"
+                android:text="1"/>
+
+            <TextView
+                android:onClick="@{() -> viewmodel.type2()}"
+                android:paddingTop="24dp"
+                android:paddingBottom="24dp"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                android:textSize="36sp"
+                android:textColor="@color/white"
+                android:text="2"/>
+
+            <TextView
+                android:onClick="@{() -> viewmodel.type3()}"
+                android:paddingTop="24dp"
+                android:paddingBottom="24dp"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                android:textSize="36sp"
+                android:textColor="@color/white"
+                android:text="3"/>
+
+            <TextView
+                android:onClick="@{() -> viewmodel.type0()}"
+                android:paddingTop="24dp"
+                android:paddingBottom="24dp"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                android:textSize="36sp"
+                android:textColor="@color/white"
+                android:text="0"/>
+
+            <TextView
+                android:onClick="@{() -> viewmodel.equals()}"
+                android:paddingTop="24dp"
+                android:paddingBottom="24dp"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                android:textSize="36sp"
+                android:textColor="@color/white"
+                android:text="="/>
+
+        </GridLayout>
+
+        <!--COMPUTATION BUTTON-->
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:background="@color/grey"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:onClick="@{() -> viewmodel.delete()}"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="24dp"
+                android:paddingBottom="24dp"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                android:textSize="24sp"
+                android:textColor="@color/white"
+                android:text="CLR"/>
+
+            <TextView
+                android:onClick="@{() -> viewmodel.divide()}"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                android:textSize="44sp"
+                android:textColor="@color/white"
+                android:text="÷"/>
+
+            <TextView
+                android:onClick="@{() -> viewmodel.multiply()}"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                android:textSize="44sp"
+                android:textColor="@color/white"
+                android:text="x"/>
+
+            <TextView
+                android:onClick="@{() -> viewmodel.substract()}"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                android:textSize="44sp"
+                android:textColor="@color/white"
+                android:text="-"/>
+
+            <TextView
+                android:onClick="@{() -> viewmodel.add()}"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                android:textSize="44sp"
+                android:textColor="@color/white"
+                android:text="+"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
+
+</layout>
